@@ -1,7 +1,7 @@
 import {Component, OnInit}  from 'angular2/core';
 
-import {IMovie} from './movie'
-import {MovieFilterPipe} from './movieFilter.pipe'
+import {IMovie} from './movie';
+import {MovieFilterPipe} from './movieFilter.pipe';
 
 @Component({
     selector: 'mh-movies',

@@ -15,5 +15,5 @@ import {MovieListComponent} from './movies/movie-list.component';
     directives: [MovieListComponent]
 })
 export class AppComponent {
-    pageTitle: string = "InStep Movie Hunter"
+    pageTitle: string = "InStep Movie Hunter";
 }
