@@ -11,6 +11,7 @@ import {MovieFilterPipe} from './movieFilter.pipe';
 })
 export class MovieListComponent implements OnInit {
     pageTitle: string = "Movie List";
+    listFilter: string = "";
     showImage: boolean = false;
     movies: IMovie[];
     errorMessage: string;

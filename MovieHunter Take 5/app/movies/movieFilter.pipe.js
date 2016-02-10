@@ -1,4 +1,4 @@
-System.register(['angular2/core', './movies/movie-list.component'], function(exports_1) {
+System.register(['angular2/core'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,33 +8,31 @@ System.register(['angular2/core', './movies/movie-list.component'], function(exp
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, movie_list_component_1;
-    var AppComponent;
+    var core_1;
+    var MovieFilterPipe;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (movie_list_component_1_1) {
-                movie_list_component_1 = movie_list_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.pageTitle = "InStep Movie Hunter";
+            MovieFilterPipe = (function () {
+                function MovieFilterPipe() {
                 }
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: 'mh-app',
-                        template: "\n    <div class=\"container\">\n        <h1>{{pageTitle}}</h1>\n        <div>\n            <mh-movies></mh-movies>\n        </div>\n     </div>\n    ",
-                        directives: [movie_list_component_1.MovieListComponent]
+                MovieFilterPipe.prototype.transform = function (value, args) {
+                    var filter = args[0].toLocaleLowerCase();
+                    return filter ? value.filter(function (movie) { return movie.title.toLocaleLowerCase().indexOf(filter) != -1; }) : value;
+                };
+                MovieFilterPipe = __decorate([
+                    core_1.Pipe({
+                        name: 'movieFilter'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], MovieFilterPipe);
+                return MovieFilterPipe;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("MovieFilterPipe", MovieFilterPipe);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=movieFilter.pipe.js.map

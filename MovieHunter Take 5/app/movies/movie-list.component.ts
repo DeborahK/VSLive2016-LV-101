@@ -1,15 +1,15 @@
 import {Component, OnInit}  from 'angular2/core';
-import {HTTP_PROVIDERS}     from 'angular2/http';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {IMovie} from './movie';
 import {MovieService} from './movie.service';
 import {MovieFilterPipe} from './movieFilter.pipe';
+import {StarComponent} from "../shared/star.component";
 
 @Component({
-    selector: 'mh-movies',
     templateUrl: 'app/movies/movie-list.component.html',
     styleUrls: ['app/movies/movie-list.component.css'],
-    providers: [HTTP_PROVIDERS, MovieService],
+    directives: [ROUTER_DIRECTIVES, StarComponent],
     pipes: [MovieFilterPipe]
 })
 export class MovieListComponent implements OnInit {
@@ -21,15 +21,15 @@ export class MovieListComponent implements OnInit {
     constructor(private _movieService: MovieService) {
     }
 
-    ngOnInit() { this.getMovies(); }
+    ngOnInit() {this.getMovies();}
 
     getMovies() {
-        this._movieService.getMovies()
-            .subscribe(
-            movies => this.movies = movies,
-            error => this.errorMessage = <any>error);
+           this._movieService.getMovies()
+                     .subscribe(
+                       movies => this.movies = movies,
+                       error =>  this.errorMessage = <any>error); 
     }
-
+    
     toggleImage(): void {
         this.showImage = !this.showImage;
     }

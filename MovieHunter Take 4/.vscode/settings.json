@@ -1,11 +1,7 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-         "files.exclude": {
+    "files.exclude": {
         "**/*.js": true,
         "**/*.map": true
-	}  
-    
-    // Controls the font size.
-	"editor.fontSize": 20,
-
+	}
 }

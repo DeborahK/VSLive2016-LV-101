@@ -26,7 +26,7 @@ System.register(['angular2/core', './movies/movie-list.component'], function(exp
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'mh-app',
-                        template: "\n    <div>\n        <h1>{{pageTitle}}</h1>\n        <div class=\"container\">\n            <mh-movies></mh-movies>\n        </div>\n     </div>\n    ",
+                        template: "\n    <div class=\"container\">\n        <h1>{{pageTitle}}</h1>\n        <div>\n            <mh-movies></mh-movies>\n        </div>\n     </div>\n    ",
                         directives: [movie_list_component_1.MovieListComponent]
                     }), 
                     __metadata('design:paramtypes', [])

@@ -5,9 +5,9 @@ import {MovieListComponent} from './movies/movie-list.component';
 @Component({
     selector: 'mh-app',
     template: `
-    <div>
+    <div class="container">
         <h1>{{pageTitle}}</h1>
-        <div class="container">
+        <div>
             <mh-movies></mh-movies>
         </div>
      </div>

@@ -2,14 +2,13 @@
 <html>
 
 <head lang="en">
-    <base href="/">
     <meta charset="UTF-8">
     <title>InStep Movie Hunter</title>
 
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="app/app.component.css" rel="stylesheet" />
     <link href="app/movies/movies.json" type="application/json" />
-    
+        
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
@@ -19,13 +18,11 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+ 
     
     <!-- Required for http -->
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
     
-    <!-- Required for routing -->
-    <script src="node_modules/angular2/bundles/router.dev.js"></script>
- 
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
