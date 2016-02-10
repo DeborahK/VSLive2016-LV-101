@@ -1,4 +1,4 @@
-System.register(['angular2/core', './movieFilter.pipe'], function(exports_1) {
+System.register(['angular2/core', "./movie.service", './movieFilter.pipe'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,49 +8,30 @@ System.register(['angular2/core', './movieFilter.pipe'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, movieFilter_pipe_1;
+    var core_1, movie_service_1, movieFilter_pipe_1;
     var MovieListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
+            function (movie_service_1_1) {
+                movie_service_1 = movie_service_1_1;
+            },
             function (movieFilter_pipe_1_1) {
                 movieFilter_pipe_1 = movieFilter_pipe_1_1;
             }],
         execute: function() {
             MovieListComponent = (function () {
-                function MovieListComponent() {
+                function MovieListComponent(_movieService) {
+                    this._movieService = _movieService;
                     this.pageTitle = "Movie List";
                     this.listFilter = "";
                     this.showImage = false;
                 }
                 MovieListComponent.prototype.ngOnInit = function () { this.getMovies(); };
                 MovieListComponent.prototype.getMovies = function () {
-                    this.movies = [
-                        {
-                            "director": "Peter Jackson",
-                            "imageurl": "http://www.coverwhiz.com/content/The-Lord-Of-The-Rings-The-Fellowship-Of-The-Ring_small.jpg",
-                            "movieId": 1,
-                            "mpaa": "pg-13",
-                            "releaseDate": "2001-12-19T00:00:00",
-                            "title": "The Lord of the Rings: The Fellowship of the Ring",
-                            "price": 12.95,
-                            "starRating": 4.88,
-                            "approvalRating": 0.97
-                        },
-                        {
-                            "director": "Fred Wolf",
-                            "imageurl": null,
-                            "movieId": 4,
-                            "mpaa": "nr",
-                            "releaseDate": "1971-02-02T00:00:00",
-                            "title": "The Point",
-                            "price": 9.95,
-                            "starRating": 4.9,
-                            "approvalRating": 0.9295
-                        }
-                    ];
+                    this.movies = this._movieService.getMovies();
                 };
                 MovieListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
@@ -63,9 +44,10 @@ System.register(['angular2/core', './movieFilter.pipe'], function(exports_1) {
                         selector: 'mh-movies',
                         templateUrl: 'app/movies/movie-list.component.html',
                         styleUrls: ['app/movies/movie-list.component.css'],
-                        pipes: [movieFilter_pipe_1.MovieFilterPipe]
+                        pipes: [movieFilter_pipe_1.MovieFilterPipe],
+                        providers: [movie_service_1.MovieService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [movie_service_1.MovieService])
                 ], MovieListComponent);
                 return MovieListComponent;
             })();

@@ -1,13 +1,15 @@
 import {Component, OnInit}  from 'angular2/core';
 
 import {IMovie} from './movie';
+import {MovieService} from "./movie.service";
 import {MovieFilterPipe} from './movieFilter.pipe';
 
 @Component({
     selector: 'mh-movies',
     templateUrl: 'app/movies/movie-list.component.html',
     styleUrls: ['app/movies/movie-list.component.css'],
-    pipes: [MovieFilterPipe]
+    pipes: [MovieFilterPipe],
+    providers: [MovieService]
 })
 export class MovieListComponent implements OnInit {
     pageTitle: string = "Movie List";
@@ -16,36 +18,13 @@ export class MovieListComponent implements OnInit {
     movies: IMovie[];
     errorMessage: string;
 
-    constructor() {
+    constructor(private _movieService: MovieService) {
     }
 
     ngOnInit() { this.getMovies(); }
 
     getMovies() {
-        this.movies = [
-            {
-                "director": "Peter Jackson",
-                "imageurl": "http://www.coverwhiz.com/content/The-Lord-Of-The-Rings-The-Fellowship-Of-The-Ring_small.jpg",
-                "movieId": 1,
-                "mpaa": "pg-13",
-                "releaseDate": "2001-12-19T00:00:00",
-                "title": "The Lord of the Rings: The Fellowship of the Ring",
-                "price": 12.95,
-                "starRating": 4.88,
-                "approvalRating": 0.97
-            },
-            {
-                "director": "Fred Wolf",
-                "imageurl": null,
-                "movieId": 4,
-                "mpaa": "nr",
-                "releaseDate": "1971-02-02T00:00:00",
-                "title": "The Point",
-                "price": 9.95,
-                "starRating": 4.9,
-                "approvalRating": 0.9295
-            }
-        ]
+        this.movies = this._movieService.getMovies();
     }
 
     toggleImage(): void {
