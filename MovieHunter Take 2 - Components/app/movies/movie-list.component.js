@@ -24,8 +24,8 @@ System.register(['angular2/core', './movieFilter.pipe'], function(exports_1) {
                     this.pageTitle = "Movie List";
                     this.listFilter = "";
                     this.showImage = false;
+                    this.getMovies();
                 }
-                MovieListComponent.prototype.ngOnInit = function () { this.getMovies(); };
                 MovieListComponent.prototype.getMovies = function () {
                     this.movies = [
                         {

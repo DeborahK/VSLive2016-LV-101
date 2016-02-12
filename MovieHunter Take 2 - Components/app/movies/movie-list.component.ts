@@ -1,4 +1,4 @@
-import {Component, OnInit}  from 'angular2/core';
+import {Component}  from 'angular2/core';
 
 import {IMovie} from './movie';
 import {MovieFilterPipe} from './movieFilter.pipe';
@@ -9,7 +9,7 @@ import {MovieFilterPipe} from './movieFilter.pipe';
     styleUrls: ['app/movies/movie-list.component.css'],
     pipes: [MovieFilterPipe]
 })
-export class MovieListComponent implements OnInit {
+export class MovieListComponent {
     pageTitle: string = "Movie List";
     listFilter: string = "";
     showImage: boolean = false;
@@ -17,9 +17,8 @@ export class MovieListComponent implements OnInit {
     errorMessage: string;
 
     constructor() {
+        this.getMovies();
     }
-
-    ngOnInit() { this.getMovies(); }
 
     getMovies() {
         this.movies = [

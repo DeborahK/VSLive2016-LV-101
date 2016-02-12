@@ -12,7 +12,7 @@ import {MovieFilterPipe} from './movieFilter.pipe';
     pipes: [MovieFilterPipe]
 })
 export class MovieListComponent implements OnInit {
-    pageTitle: string = "Movie List";
+    pageTitle: string = "InStep Movie List";
     listFilter: string = "";
     showImage: boolean = false;
     movies: IMovie[];

@@ -28,7 +28,7 @@ System.register(['angular2/core', 'angular2/router', './movie.service', './movie
             MovieListComponent = (function () {
                 function MovieListComponent(_movieService) {
                     this._movieService = _movieService;
-                    this.pageTitle = "Movie List";
+                    this.pageTitle = "InStep Movie List";
                     this.listFilter = "";
                     this.showImage = false;
                 }
