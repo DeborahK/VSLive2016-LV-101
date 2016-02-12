@@ -38,7 +38,7 @@ System.register(['angular2/core', 'angular2/router', './home/welcome.component',
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'mh-app',
-                        template: "\n    <div class=\"container\">\n        <nav class=\"navbar navbar-default\">\n            <div class=\"container-fluid\">\n                <a class=\"navbar-brand\">{{title}}</a>\n                <ul class=\"nav navbar-nav\">\n                    <li><a class=\"nav navbar-nav\"\n                        [routerLink]=\"['Welcome']\">Home</a></li>\n                    <li><a [routerLink]=\"['Movies']\">Movie List</a></li>\n                </ul>\n            </div>\n        </nav>\n        <div class=\"container\">\n            <router-outlet></router-outlet>\n        </div>\n     </div>\n     ",
+                        template: "\n    <div class=\"container\">\n        <nav class=\"navbar navbar-default\">\n            <div class=\"container-fluid\">\n                <a class=\"navbar-brand\">{{pageTitle}}</a>\n                <ul class=\"nav navbar-nav\">\n                    <li><a class=\"nav navbar-nav\"\n                        [routerLink]=\"['Welcome']\">Home</a></li>\n                    <li><a [routerLink]=\"['Movies']\">Movie List</a></li>\n                </ul>\n            </div>\n        </nav>\n        <div class=\"container\">\n            <router-outlet></router-outlet>\n        </div>\n     </div>\n     ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [movie_service_1.MovieService]
                     }),

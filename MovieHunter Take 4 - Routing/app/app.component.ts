@@ -12,7 +12,7 @@ import {MovieService}       from './movies/movie.service';
     <div class="container">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-                <a class="navbar-brand">{{title}}</a>
+                <a class="navbar-brand">{{pageTitle}}</a>
                 <ul class="nav navbar-nav">
                     <li><a class="nav navbar-nav"
                         [routerLink]="['Welcome']">Home</a></li>

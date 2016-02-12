@@ -23,8 +23,9 @@ System.register(['angular2/core', 'angular2/router', './movie.service'], functio
             }],
         execute: function() {
             MovieDetailComponent = (function () {
-                function MovieDetailComponent(_movieService, _routeParams) {
+                function MovieDetailComponent(_movieService, _router, _routeParams) {
                     this._movieService = _movieService;
+                    this._router = _router;
                     this._routeParams = _routeParams;
                     this.pageTitle = "Movie Detail";
                 }
@@ -35,16 +36,18 @@ System.register(['angular2/core', 'angular2/router', './movie.service'], functio
                 MovieDetailComponent.prototype.getMovie = function (id) {
                     this.movie = this._movieService.getMovie(id);
                 };
+                MovieDetailComponent.prototype.onBack = function () {
+                    this._router.navigate(['Movies']);
+                };
                 MovieDetailComponent.prototype.convertToDate = function (dateString) {
                     return new Date(dateString);
                 };
                 MovieDetailComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/movies/movie-detail.component.html',
-                        styleUrls: ['app/movies/movie-detail.component.css'],
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        styleUrls: ['app/movies/movie-detail.component.css']
                     }), 
-                    __metadata('design:paramtypes', [movie_service_1.MovieService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [movie_service_1.MovieService, router_1.Router, router_1.RouteParams])
                 ], MovieDetailComponent);
                 return MovieDetailComponent;
             })();
