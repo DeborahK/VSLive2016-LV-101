@@ -1,9 +1,17 @@
-// Place your settings in this file to overwrite default and user settings.
 {
-    	"files.exclude": {
-		"**/.git": true,
-		"**/.DS_Store": true,
-        "**/*.js": true,
-        "**/*.map": true
-	}
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": true
+  },
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
 }
