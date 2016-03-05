@@ -31,7 +31,7 @@ export class MovieDetailComponent implements OnInit {
         this._router.navigate(['Movies']);
     }
     
-    convertToDate(dateString): Date {
+    convertToDate(dateString: string): Date {
         return new Date(dateString);
     }
 
