@@ -32,7 +32,7 @@ System.register(['angular2/core', 'angular2/router', './movie.service'], functio
                     this.pageTitle = "Movie Detail";
                 }
                 MovieDetailComponent.prototype.ngOnInit = function () {
-                    var id = parseInt(this._routeParams.get('id'), 10);
+                    var id = +this._routeParams.get('id');
                     this.getMovie(id);
                 };
                 MovieDetailComponent.prototype.getMovie = function (id) {

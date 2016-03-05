@@ -42,7 +42,8 @@ System.register(['angular2/core', 'angular2/router', './home/welcome.component',
                         selector: 'mh-app',
                         template: "\n    <div class=\"container\">\n        <nav class=\"navbar navbar-default\">\n            <div class=\"container-fluid\">\n                <a class=\"navbar-brand\">{{pageTitle}}</a>\n                <ul class=\"nav navbar-nav\">\n                    <li><a class=\"nav navbar-nav\"\n                        [routerLink]=\"['Welcome']\">Home</a></li>\n                    <li><a [routerLink]=\"['Movies']\">Movie List</a></li>\n                </ul>\n            </div>\n        </nav>\n        <div class=\"container\">\n            <router-outlet></router-outlet>\n        </div>\n     </div>\n     ",
                         directives: [router_1.ROUTER_DIRECTIVES],
-                        providers: [movie_service_1.MovieService]
+                        providers: [movie_service_1.MovieService,
+                            router_1.ROUTER_PROVIDERS]
                     }),
                     router_1.RouteConfig([
                         { path: '/welcome', name: 'Welcome', component: welcome_component_1.WelcomeComponent, useAsDefault: true },

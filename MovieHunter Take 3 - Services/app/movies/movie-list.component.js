@@ -27,7 +27,7 @@ System.register(['angular2/core', './movie.service', './movieFilter.pipe'], func
             MovieListComponent = (function () {
                 function MovieListComponent(_movieService) {
                     this._movieService = _movieService;
-                    this.pageTitle = "Movie List";
+                    this.pageTitle = "InStep Movie List";
                     this.listFilter = "";
                     this.showImage = false;
                 }
