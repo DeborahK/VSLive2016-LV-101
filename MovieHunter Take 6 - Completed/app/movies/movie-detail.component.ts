@@ -20,7 +20,7 @@ export class MovieDetailComponent implements OnInit {
     }
 
     ngOnInit() { 
-        let id = parseInt(this._routeParams.get('id'),10);
+        let id = +this._routeParams.get('id');
         this.getMovie(id); 
     }
 
@@ -31,7 +31,7 @@ export class MovieDetailComponent implements OnInit {
                 error => this.errorMessage = <any>error);
     }
 
-    convertToDate(dateString): Date {
+    convertToDate(dateString: string): Date {
         return new Date(dateString);
     }
 

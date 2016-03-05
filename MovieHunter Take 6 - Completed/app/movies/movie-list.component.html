@@ -8,12 +8,14 @@
         <div class="row">
             <div class="col-md-2">Filter by:</div>
             <div class="col-md-4">
-                <input type="text" #listFilter (keyup)="0" />
+                <input type="text" [(ngModel)]='listFilter' />
             </div>
         </div>
 
-        <div class="row" [hidden]="!listFilter.value">
-            <h3>Movies filtered by: {{listFilter.value}}</h3>
+        <div class="row" [hidden]="!listFilter">
+            <div class="col-md-6">
+                <h3>Movies filtered by: {{listFilter}}</h3>
+            </div>
         </div>
 
         <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
@@ -37,18 +39,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="#movie of movies | movieFilter:listFilter.value">
+                    <tr *ngFor='#movie of movies| movieFilter:listFilter'>
                         <td>
-                            <img [hidden]="!showImage || !movie.imageurl" style="width:50px;margin:2px" 
-                            [src]="movie.imageurl" 
-                            [title]="movie.title">
+                            <img [hidden]="!showImage || !movie.imageurl" style="width:50px;margin:2px" [src]="movie.imageurl" [title]="movie.title">
                         </td>
                         <td><a [routerLink]="['MovieDetail', { id: movie.movieId }]">{{ movie.title }}</a></td>
                         <td>{{ movie.director }}</td>
                         <td>{{ convertToDate(movie.releaseDate) | date}}</td>
                         <td>{{ movie.mpaa | uppercase}}</td>
                         <td>{{ movie.price | currency:'USD':true}}</td>
-                        <td><star [rating]="movie.starRating"></star></td>
+                        <td>
+                            <is-star [rating]="movie.starRating"></is-star>
+                        </td>
                         <td>{{ movie.approvalRating | percent: '1.0-0'}}</td>
                     </tr>
                 </tbody>

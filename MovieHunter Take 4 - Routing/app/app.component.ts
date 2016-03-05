@@ -1,5 +1,5 @@
 import {Component}          from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 
 import {WelcomeComponent}   from './home/welcome.component';
 import {MovieListComponent} from './movies/movie-list.component';
@@ -26,7 +26,8 @@ import {MovieService}       from './movies/movie.service';
      </div>
      `,
     directives: [ROUTER_DIRECTIVES],
-    providers: [MovieService]
+    providers: [MovieService,
+                ROUTER_PROVIDERS]
 })
 @RouteConfig([
     { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },

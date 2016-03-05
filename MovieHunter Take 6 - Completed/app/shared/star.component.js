@@ -32,7 +32,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 ], StarComponent.prototype, "rating", void 0);
                 StarComponent = __decorate([
                     core_1.Component({
-                        selector: 'star',
+                        selector: 'is-star',
                         templateUrl: 'app/shared/star.component.html',
                         styleUrls: ['app/shared/star.component.css']
                     }), 

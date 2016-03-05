@@ -22,6 +22,15 @@ System.register(['angular2/core', './movieFilter.pipe'], function(exports_1, con
             }],
         execute: function() {
             MovieListComponent = (function () {
+                // private _listFilter: string = "";
+                // get listFilter(): string {
+                //     return this._listFilter;
+                // }
+                // set listFilter(filter: string) {
+                //     this._listFilter = filter
+                //     filter = filter.toLocaleLowerCase();
+                //     this.movies = this._allMovies.filter(m => m.title.toLocaleLowerCase().indexOf(filter) != -1);
+                // }
                 function MovieListComponent() {
                     this.pageTitle = "Movie List";
                     this.listFilter = "";

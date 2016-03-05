@@ -46,6 +46,7 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './home/we
                         template: "\n    <div>\n        <nav class=\"navbar navbar-default\">\n            <div class=\"container-fluid\">\n                <a class=\"navbar-brand\">{{title}}</a>\n                <ul class=\"nav navbar-nav\">\n                    <li><a class=\"nav navbar-nav\"\n                        [routerLink]=\"['Welcome']\">Home</a></li>\n                    <li><a [routerLink]=\"['Movies']\">Movie List</a></li>\n                </ul>\n            </div>\n        </nav>\n        <div class=\"container\">\n            <router-outlet></router-outlet>\n        </div>\n     </div>\n     ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
+                            router_1.ROUTER_PROVIDERS,
                             http_1.HTTP_PROVIDERS,
                             movie_service_1.MovieService
                         ]

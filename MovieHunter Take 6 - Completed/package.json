@@ -1,7 +1,7 @@
 {
   "name": "movie-hunter",
   "version": "1.0.0",
-  "description": "Take 6: Adding HTTP and Routing to the Movie Hunter Application",
+  "description": "Take 6: Completed Movie Hunter Application",
   "author": "Deborah Kurata",
   "scripts": {
     "tsc": "tsc",

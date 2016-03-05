@@ -16,6 +16,15 @@ export class MovieListComponent {
     movies: IMovie[];
     errorMessage: string;
 
+    // private _listFilter: string = "";
+    // get listFilter(): string {
+    //     return this._listFilter;
+    // }
+    // set listFilter(filter: string) {
+    //     this._listFilter = filter
+    //     filter = filter.toLocaleLowerCase();
+    //     this.movies = this._allMovies.filter(m => m.title.toLocaleLowerCase().indexOf(filter) != -1);
+    // }
     constructor() {
         this.getMovies();
     }

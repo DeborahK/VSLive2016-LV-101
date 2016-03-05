@@ -13,7 +13,9 @@
         </div>
 
         <div class="row" [hidden]="!listFilter.value">
-            <h3>Movies filtered by: {{listFilter.value}}</h3>
+            <div class="col-md-6">
+                <h3>Movies filtered by: {{listFilter.value}}</h3>
+            </div>
         </div>
 
         <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
@@ -39,7 +41,9 @@
                 <tbody>
                     <tr *ngFor="#movie of movies | movieFilter:listFilter.value">
                         <td>
-                            <img [hidden]="!showImage || !movie.imageurl" style="width:50px;margin:2px" 
+                            <img [hidden]="!showImage || !movie.imageurl" 
+                            [style.width.px]="50
+                            [style.margin.pm]="2" 
                             [src]="movie.imageurl" 
                             [title]="movie.title">
                         </td>

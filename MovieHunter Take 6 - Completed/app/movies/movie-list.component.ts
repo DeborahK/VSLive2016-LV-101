@@ -13,7 +13,7 @@ import {StarComponent} from "../shared/star.component";
     pipes: [MovieFilterPipe]
 })
 export class MovieListComponent implements OnInit {
-    pageTitle: string = "Movie List";
+    pageTitle: string = "InStep Movie List";
     showImage: boolean = false;
     movies: IMovie[];
     errorMessage: string;
@@ -21,15 +21,15 @@ export class MovieListComponent implements OnInit {
     constructor(private _movieService: MovieService) {
     }
 
-    ngOnInit() {this.getMovies();}
+    ngOnInit() { this.getMovies(); }
 
     getMovies() {
-           this._movieService.getMovies()
-                     .subscribe(
-                       movies => this.movies = movies,
-                       error =>  this.errorMessage = <any>error); 
+        this._movieService.getMovies()
+            .subscribe(
+            movies => this.movies = movies,
+            error => this.errorMessage = <any>error);
     }
-    
+
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
