@@ -10,10 +10,10 @@ import {MovieService}       from './movies/movie.service';
 @Component({
     selector: 'mh-app',
     template: `
-    <div>
+    <div class="container">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-                <a class="navbar-brand">{{title}}</a>
+                <a class="navbar-brand">{{pageTitle}}</a>
                 <ul class="nav navbar-nav">
                     <li><a class="nav navbar-nav"
                         [routerLink]="['Welcome']">Home</a></li>
@@ -39,5 +39,5 @@ import {MovieService}       from './movies/movie.service';
     { path: '/movie/:id', name: 'MovieDetail', component: MovieDetailComponent }
 ])
 export class AppComponent {
-    title: string = "InStep Movie Hunter";
+    pageTitle: string = "InStep Movie Hunter";
 }

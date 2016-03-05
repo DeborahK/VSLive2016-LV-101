@@ -14,6 +14,7 @@ import {StarComponent} from "../shared/star.component";
 })
 export class MovieListComponent implements OnInit {
     pageTitle: string = "InStep Movie List";
+    listFilter: string = "";
     showImage: boolean = false;
     movies: IMovie[];
     errorMessage: string;

@@ -19,7 +19,7 @@ export class MovieDetailComponent implements OnInit {
     }
 
     ngOnInit() { 
-        let id = parseInt(this._routeParams.get('id'),10);
+        let id = +this._routeParams.get('id');
         this.getMovie(id); 
     }
 

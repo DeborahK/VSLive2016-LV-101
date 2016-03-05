@@ -3,10 +3,10 @@ import {IMovie}         from './movie';
 
 @Injectable()
 export class MovieService {
-    constructor() { }
-
-    getMovies() : IMovie[] {
-        return [
+    private movieList : IMovie[];
+    
+    constructor() {
+        this.movieList = [
             {
                 "director": "Peter Jackson",
                 "imageurl": "http://www.coverwhiz.com/content/The-Lord-Of-The-Rings-The-Fellowship-Of-The-Ring_small.jpg",
@@ -52,5 +52,10 @@ export class MovieService {
                 "approvalRating": 0.9295
             }
         ];
+     }
+
+    getMovies() : IMovie[] {
+        return this.movieList;
     }
+    
 }

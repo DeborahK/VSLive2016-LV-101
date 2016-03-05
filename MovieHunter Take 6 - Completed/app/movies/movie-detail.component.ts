@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router, RouteParams} from 'angular2/router';
 
 import {IMovie} from './movie';
 import {MovieService} from './movie.service';
@@ -8,7 +8,7 @@ import {StarComponent} from "../shared/star.component";
 @Component({
     templateUrl: 'app/movies/movie-detail.component.html',
     styleUrls: ['app/movies/movie-detail.component.css'],
-    directives: [ROUTER_DIRECTIVES, StarComponent]
+    directives: [StarComponent]
 })
 export class MovieDetailComponent implements OnInit {
     pageTitle: string = "Movie Detail";
@@ -16,6 +16,7 @@ export class MovieDetailComponent implements OnInit {
     errorMessage: string;
 
     constructor(private _movieService: MovieService,
+                private _router: Router,
                 private _routeParams: RouteParams) {
     }
 
@@ -31,6 +32,10 @@ export class MovieDetailComponent implements OnInit {
                 error => this.errorMessage = <any>error);
     }
 
+    onBack() {
+        this._router.navigate(['Movies']);
+    }
+    
     convertToDate(dateString: string): Date {
         return new Date(dateString);
     }
