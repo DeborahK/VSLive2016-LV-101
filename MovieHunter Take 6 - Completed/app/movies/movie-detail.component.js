@@ -28,8 +28,9 @@ System.register(['angular2/core', 'angular2/router', './movie.service', "../shar
             }],
         execute: function() {
             MovieDetailComponent = (function () {
-                function MovieDetailComponent(_movieService, _routeParams) {
+                function MovieDetailComponent(_movieService, _router, _routeParams) {
                     this._movieService = _movieService;
+                    this._router = _router;
                     this._routeParams = _routeParams;
                     this.pageTitle = "Movie Detail";
                 }
@@ -42,6 +43,9 @@ System.register(['angular2/core', 'angular2/router', './movie.service', "../shar
                     this._movieService.getMovie(id)
                         .subscribe(function (movie) { return _this.movie = movie; }, function (error) { return _this.errorMessage = error; });
                 };
+                MovieDetailComponent.prototype.onBack = function () {
+                    this._router.navigate(['Movies']);
+                };
                 MovieDetailComponent.prototype.convertToDate = function (dateString) {
                     return new Date(dateString);
                 };
@@ -49,9 +53,9 @@ System.register(['angular2/core', 'angular2/router', './movie.service', "../shar
                     core_1.Component({
                         templateUrl: 'app/movies/movie-detail.component.html',
                         styleUrls: ['app/movies/movie-detail.component.css'],
-                        directives: [router_1.ROUTER_DIRECTIVES, star_component_1.StarComponent]
+                        directives: [star_component_1.StarComponent]
                     }), 
-                    __metadata('design:paramtypes', [movie_service_1.MovieService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [movie_service_1.MovieService, router_1.Router, router_1.RouteParams])
                 ], MovieDetailComponent);
                 return MovieDetailComponent;
             }());

@@ -38,12 +38,12 @@ System.register(['angular2/core', 'angular2/http', 'angular2/router', './home/we
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = "InStep Movie Hunter";
+                    this.pageTitle = "InStep Movie Hunter";
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'mh-app',
-                        template: "\n    <div>\n        <nav class=\"navbar navbar-default\">\n            <div class=\"container-fluid\">\n                <a class=\"navbar-brand\">{{title}}</a>\n                <ul class=\"nav navbar-nav\">\n                    <li><a class=\"nav navbar-nav\"\n                        [routerLink]=\"['Welcome']\">Home</a></li>\n                    <li><a [routerLink]=\"['Movies']\">Movie List</a></li>\n                </ul>\n            </div>\n        </nav>\n        <div class=\"container\">\n            <router-outlet></router-outlet>\n        </div>\n     </div>\n     ",
+                        template: "\n    <div class=\"container\">\n        <nav class=\"navbar navbar-default\">\n            <div class=\"container-fluid\">\n                <a class=\"navbar-brand\">{{pageTitle}}</a>\n                <ul class=\"nav navbar-nav\">\n                    <li><a class=\"nav navbar-nav\"\n                        [routerLink]=\"['Welcome']\">Home</a></li>\n                    <li><a [routerLink]=\"['Movies']\">Movie List</a></li>\n                </ul>\n            </div>\n        </nav>\n        <div class=\"container\">\n            <router-outlet></router-outlet>\n        </div>\n     </div>\n     ",
                         directives: [router_1.ROUTER_DIRECTIVES],
                         providers: [
                             router_1.ROUTER_PROVIDERS,

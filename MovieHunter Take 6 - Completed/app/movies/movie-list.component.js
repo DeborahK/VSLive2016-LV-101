@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './movie.service', "../shared/star.component"], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './movie.service', './movieFilter.pipe', "../shared/star.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './movie.service', "../shar
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, movie_service_1, star_component_1;
+    var core_1, router_1, movie_service_1, movieFilter_pipe_1, star_component_1;
     var MovieListComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', 'angular2/router', './movie.service', "../shar
             },
             function (movie_service_1_1) {
                 movie_service_1 = movie_service_1_1;
+            },
+            function (movieFilter_pipe_1_1) {
+                movieFilter_pipe_1 = movieFilter_pipe_1_1;
             },
             function (star_component_1_1) {
                 star_component_1 = star_component_1_1;
@@ -46,14 +49,12 @@ System.register(['angular2/core', 'angular2/router', './movie.service', "../shar
                 MovieListComponent.prototype.convertToDate = function (dateString) {
                     return new Date(dateString);
                 };
-                MovieListComponent.prototype.onFilterChanged = function (filter) {
-                    this.listFilter = filter;
-                };
                 MovieListComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/movies/movie-list.component.html',
                         styleUrls: ['app/movies/movie-list.component.css'],
-                        directives: [router_1.ROUTER_DIRECTIVES, star_component_1.StarComponent]
+                        directives: [router_1.ROUTER_DIRECTIVES, star_component_1.StarComponent],
+                        pipes: [movieFilter_pipe_1.MovieFilterPipe]
                     }), 
                     __metadata('design:paramtypes', [movie_service_1.MovieService])
                 ], MovieListComponent);

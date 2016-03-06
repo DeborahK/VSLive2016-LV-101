@@ -23,9 +23,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 }
                 MovieFilterPipe.prototype.transform = function (value, args) {
                     var filter = args[0].toLocaleLowerCase();
-                    return filter ? value.filter(function (movie) {
-                        return movie.title.toLocaleLowerCase().indexOf(filter) != -1;
-                    }) : value;
+                    return filter ? value.filter(function (movie) { return movie.title.toLocaleLowerCase().indexOf(filter) != -1; }) : value;
                 };
                 MovieFilterPipe = __decorate([
                     core_1.Pipe({
